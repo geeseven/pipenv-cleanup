@@ -24,7 +24,7 @@ $ mkdir investigating-something
 $ cd investigating-something
 $ pipenv install foo bar foo-bar
 ...
-$ vim pipenv investigating-something.py
+$ vim investigating-something.py
 $ pipenv run python investigating-something.py
 Hello World!
 $ # A few hours later
@@ -33,7 +33,7 @@ $ rm -rf investigating-something
 ```
 ## time to clean up
 ```console
-$ /path/to/pipenv-cleanup.py 
+$ /path/to/pipenv-cleanup.py
 Found the following deleted pipenv project homes.
 
 /home/user/investigating-something
@@ -44,7 +44,7 @@ Do you want to delete the corresponding pipenv virtualenvs?
 
 (y/N)n
 no action taken
-$ /path/to/pipenv-cleanup.py 
+$ /path/to/pipenv-cleanup.py
 Found the following deleted pipenv project homes.
 
 /home/user/investigating-something
@@ -55,7 +55,7 @@ Do you want to delete the corresponding pipenv virtualenvs?
 
 (y/N)y
 The pipenv virtualenvs have been deleted.
-$ /path/to/pipenv-cleanup.py 
+$ /path/to/pipenv-cleanup.py
 There are no deleted pipenv project homes that still have pipenv virtualenvs.
 ```
 
