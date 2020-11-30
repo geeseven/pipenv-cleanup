@@ -9,7 +9,11 @@ try:
 except KeyError:
     pipenv_location = expanduser("~/.local/share/virtualenvs")
 
-pipenv_envs = listdir(pipenv_location)
+try:
+    pipenv_envs = listdir(pipenv_location)
+except (FileNotFoundError, PermissionError) as e:
+    print(e)
+    exit(1)
 
 rm_pipenv_envs = []
 
@@ -36,5 +40,5 @@ if rm_pipenv_envs:
             rmtree((i[1]))
 else:
     print(
-        "There are no deleted pipenv project homes that still have pipenv virtualenvs."
+        "There are no deleted pipenv project homes that still have pipenv virtualenvs."  # noqa:
     )
